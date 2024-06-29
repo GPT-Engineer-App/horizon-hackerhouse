@@ -1,13 +1,23 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
+import Services from "./pages/Services.jsx";
+import Internship from "./pages/Internship.jsx";
+import Contact from "./pages/Contact.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Index />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Index />} />
+          <Route exact path="/services" element={<Services />} />
+          <Route exact path="/internship" element={<Internship />} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
